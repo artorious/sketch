@@ -8,6 +8,12 @@ A play on files and exceptions.
 # Init
 the_file = open('sketch.txt') # Open file and assign object
 
-print(the_file.readlines(), end='') # Print data in the file as list
+# Process data, extract each part from each line and display on screen"
+
+for each_line in the_file:
+    (role, line_spoken) = each_line.split(':')
+    print(role, end='')
+    print(' SAID: ', end='')
+    print(line_spoken, end='')
 
 the_file.close() # Close file object
