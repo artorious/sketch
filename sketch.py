@@ -11,10 +11,15 @@ the_file = open('sketch.txt') # Open file and assign object
 # Process data, extract each part from each line and display on screen
 
 for each_line in the_file:
-    if not each_line.find(':') == -1:
+   # Skip lines that dont contain separator
+    try:
         (role, line_spoken) = each_line.split(':', 1)
         print(role, end='')
         print(' SAID: ', end='')
         print(line_spoken, end='')
+    
+    except ValueError as err:
+        print(err)
+        
 
 the_file.close() # Close file object
