@@ -3,6 +3,8 @@
 A play on files and exceptions. 
     * Reading data from files
     * Exception handling
+Persistance
+    * Saving data to files
 """
 
 try: # Check that file exists

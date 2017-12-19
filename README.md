@@ -1,7 +1,12 @@
 # sketch - A play on files and exceptions. 
 
-    * Reading data from files
-    * Exception handling
+<dl>
+    <dt>files and exceptions<dt>
+        <dd>Reading data from files</dd>
+        <dd>Exception handling</dd>
+    <dt>Persistance<dt>
+        <dd>Saving data to files</dd>
+</dl>
 
 Attribution
 ===========
