@@ -6,6 +6,7 @@ A play on files and exceptions.
 Persistance
     * Saving data to files
 """
+from scripts.nester import nester
 
 # Init
 man = []
@@ -13,7 +14,7 @@ other_man = []
 
 try: # Check that file exists
     # Init: Open file and assign object
-    with open('sketch.txt') as the_file:
+    with open('text/sketch.txt') as the_file:
         # Process data, extract each part from each line, append to list and 
         # save to appropriate file
         for each_line in the_file:
@@ -28,18 +29,18 @@ try: # Check that file exists
             
             except ValueError as data_err:
                 print(data_err, ': Line skipped (ignored)')
-                print('No separator (:) in Line ->',each_line)
+                print('No separator (:) in Line ->', each_line)
                 
 except IOError as no_file_err:
     print(no_file_err)
 
 try:
     # Open output data files in write mode, assign to file objects
-    with open('man_data.txt', 'w') as man_file, \
-    open('other_man_data.txt', 'w') as other_man_file:
-        # Write to disk files
-        print(man, file=man_file)   
-        print(other_man, file=other_man_file)
+    with open('text/man_data.txt', 'w') as man_file, \
+    open('text/other_man_data.txt', 'w') as other_man_file:
+        # Write to disk files in readable format
+        nester(man, data_output=man_file)
+        nester(other_man, data_output=other_man_file)  
     
 except IOError as file_err:
     print('File Error', file_err)
